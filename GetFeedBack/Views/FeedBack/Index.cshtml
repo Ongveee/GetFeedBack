@@ -1,0 +1,82 @@
+﻿﻿@using GetFeedBack.Views.Shared.Components.SearchBar;
+@model IEnumerable<GetFeedBack.Models.FeedBacks>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/FeedBack/_Layout.cshtml";
+    int stt = 0;
+}
+
+
+
+
+
+<h1>FeedBack</h1>
+<a class="btn btn-success mb-3" asp-route-id="@TempData["UserId"]" asp-action="Create">Create New</a>
+
+<table class="table-hover container-fluid" id="feedbacktb">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+
+                @Html.DisplayNameFor(model=>model.Description)
+
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model=>model.UserId)
+            </th>
+            <th style="width:65px;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            stt = stt + 1;
+            <tr>
+                <td>@stt</td>
+                <td>
+                    <a class="nav-link" style="color:black;" asp-controller="FeedBackDetails" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Description)
+                </td>
+                <th hidden>
+                    @Html.DisplayFor(modelItem=>item.UserId)
+                </th>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                    <a asp-action="CreateLink" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-link"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+    <script src="https://kit.fontawesome.com/20dc22ebe0.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            debugger;
+            $('#feedbacktb').DataTable();
+        })
+    </script>
+    }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

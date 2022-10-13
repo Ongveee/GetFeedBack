@@ -1,0 +1,18 @@
+﻿@model GetFeedBack.Models.FeedBacks
+
+<td>
+    @Html.DisplayFor(modelItem => Model.Name)
+</td>
+<td>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Details" asp-route-id="@Model.Id">Details</a> |
+    <a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+    <form asp-action="DeleteFeedBack" asp-route-id="@Model.Id"
+    data-ajax="true" data-ajax-success="deleteItem(this)">
+        <button type="submit" class="btn btn-sm btn-danger ml-1"
+            onclick="return comfirm(`Delete Confirmation for Feedvack @Model.Id`);"
+        >
+            Delete
+        </button>
+    </form>
+</td>

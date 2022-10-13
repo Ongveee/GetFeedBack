@@ -1,0 +1,35 @@
+﻿@model GetFeedBack.Models.FeedBacks
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/FeedBack/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>FeedBacks</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div class="btn-group">
+    <a class="btn btn-info " asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+    <a class="btn btn-secondary" asp-action="Index" asp-route-id="@Model.UserId">Back to List</a>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

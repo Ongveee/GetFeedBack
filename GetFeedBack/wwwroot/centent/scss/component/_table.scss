@@ -1,0 +1,19 @@
+// table
+.table {
+    color: #425466;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.table thead tr,
+.table thead tr th {
+    background-color: #fafafb !important;
+    color: #27272e;
+    z-index: 1;
+    font-size: 13px;
+}
+.table thead tr th {
+    border: 1px solid #e7e7e7;
+}
+
+// end table

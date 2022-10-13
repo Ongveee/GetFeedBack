@@ -1,0 +1,32 @@
+﻿@using GetFeedBack.Views.Shared.Components.SearchBar
+
+@model SPager
+<div class="container m-0 p-0 btn-group">
+    <div class="col-4 btn-group">
+        Showing @Model.StartRecord to @Model.EndRecord of @Model.TotalItems Rows
+    </div>
+    <div class="col-4 btn-group">
+        <span class="col-7 mt-2 p-0">
+            Rows Per Page
+        </span>
+        <span class="col-5 p-1">
+            <select class="form-control" id="pageSelector" asp-items="@ViewBag.PageSizes"
+                    onchange="    ChangePageSize(this, '@Model.SearchText');">
+            </select>
+        </span>
+    </div>
+    <div class="col-5 btn-group justify-content-end p-1 m-1">
+        Showing @Model.CurrentPage / @Model.TotalItems Pages
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        debugger;
+        ChangePageSize();
+    });
+    function ChangePageSize(obj, searchtext) {
+        debugger;
+        window.location.href = "/@Model.Controller/@Model.Action" + "?pageSize=" + obj.value + "&SearchText=" + searchtext;
+    }
+</script>

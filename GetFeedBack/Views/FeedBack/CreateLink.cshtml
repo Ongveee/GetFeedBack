@@ -1,0 +1,90 @@
+﻿@model GetFeedBack.Models.Links
+
+@{
+    ViewData["Title"] = "CreateLink";
+    Layout = "~/Views/FeedBack/_Layout.cshtml";
+}
+
+<h1>Tạo Link</h1>
+
+
+<hr />
+<div id="message"></div>
+
+<div id="myModalSuccess" class="modal fade text-width:30%;" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Link của bạn nè:</h2>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div id="SuccessAlertModal" class="modal-body alert alert-success">
+
+            </div>
+
+            <div class="modal-footer">&nbsp;
+                <button type="button" class="btn btn-info" data-dismiss="modal" >
+                    <a asp-action="Index"  asp-route-id="@TempData["UserId"]">
+                        Close
+                    </a>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-4"   >
+        <form asp-action="CreateLink">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Deadline" class="control-label"></label>
+                <input asp-for="Deadline" class="form-control" />
+                <span asp-validation-for="Deadline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Tạo link" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-route-id="@TempData["UserId"]">Back to List</a>
+</div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+@section scripts {
+    <script type="text/javascript">
+        if ("@ViewData["message"]" == ""){
+            function openSuccessModal(strMessage){
+                var myDiv = document.getElementById("SuccessAlertModal");
+                myDiv.innerHTML = strMessage;
+                $('#myModalSuccess').modal("show");
+
+            }  
+        
+            $(document).ready( function() {
+                var msg =  "@TempData["SuccessMessage"]";
+                if (msg)
+                    openSuccessModal(msg);
+            })
+
+        }
+        else {
+            $(".row").hide();
+            document.getElementById("message").innerHTML = "@ViewData["message"]";
+        }
+        
+    
+    
+    </script>
+}

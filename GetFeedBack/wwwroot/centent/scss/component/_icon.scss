@@ -1,0 +1,178 @@
+
+// icon
+.font-icon {
+    display: inline-block;
+    mask-position: center !important;
+    vertical-align: sub !important;
+    width: 14px;
+    height: 14px;
+    mask-size: cover;
+    background-size: cover !important;
+    background-color: #828282;
+}
+
+.icon-blue {
+    background-color: #1d8dc7 !important;
+}
+.icon-white {
+    background-color: #fff !important;
+}
+.icon-gray {
+    background-color: #718096 !important;
+}
+.icon-primary {
+    background-color: #217582;
+}
+
+.user {
+    background-image: url(../images/attach.svg);
+    mask-image: url(../images/attach.svg);
+    width: 24px;
+    height: 24px;
+    vertical-align: middle !important;
+}
+.FileEarmarkBreakFill {
+    background-image: url(../images/logo/FileEarmarkBreakFill.svg);
+    mask-image: url(../images/logo/FileEarmarkBreakFill.svg);
+    width: 20px;
+    height: 20px;
+    vertical-align: middle !important;
+}
+.StickiesFill {
+    background-image: url(../images/logo/StickiesFill.svg);
+    mask-image: url(../images/logo/StickiesFill.svg);
+    width: 20px;
+    height: 20px;
+    vertical-align: middle !important;
+}
+.ghim {
+    background-image: url(../images/logo/ghim.svg);
+    mask-image: url(../images/logo/ghim.svg);
+    width: 16px;
+    height: 16px;
+    vertical-align: text-top !important;
+}
+.delete {
+    background-image: url(../images/logo/delete.svg);
+    mask-image: url(../images/logo/delete.svg);
+    width: 16px;
+    height: 16px;
+    vertical-align: middle !important;
+}
+.icon-Action {
+    background-image: url(../images/logo/icon-Action.svg);
+    mask-image: url(../images/logo/icon-Action.svg);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-Search {
+    background-image: url(../images/logo/Search.svg);
+    mask-image: url(../images/logo/Search.svg);
+    width: 16px;
+    height: 16px;
+}
+
+.icon-Attach {
+    background-image: url(../images/logo/attach.svg);
+    mask-image: url(../images/logo/attach.svg);
+    width: 24px;
+    height: 24px;
+    vertical-align: middle !important;
+}
+.icon-Ghim-tron {
+    background-image: url(../images/logo/Ghim-tron.svg);
+    mask-image: url(../images/logo/Ghim-tron.svg);
+    width: 24px;
+    height: 24px;
+    vertical-align: middle !important;
+}
+.icon-arrow-left {
+    background-image: url(../images/logo/arrow-left.svg);
+    mask-image: url(../images/logo/arrow-left.svg);
+    width: 24px;
+    height: 24px;
+    vertical-align: middle !important;
+}
+.icon-arrow-right {
+    background-image: url(../images/logo/arrow-right.svg);
+    mask-image: url(../images/logo/arrow-right.svg);
+    width: 24px;
+    height: 24px;
+    vertical-align: middle !important;
+}
+.icon-chevron-up {
+    background-image: url(../images/logo/chevron.up.svg);
+    mask-image: url(../images/logo/chevron.up.svg);
+    width: 24px;
+    height: 24px;
+    vertical-align: middle !important;
+}
+.icon-chevron-down {
+    background-image: url(../images/logo/chevron.down.svg);
+    mask-image: url(../images/logo/chevron.down.svg);
+    width: 24px;
+    height: 24px;
+    vertical-align: middle !important;
+}
+
+
+.icon-business {
+    background-color: black;
+    -webkit-mask:  url("/Content/images/svg/business.svg") no-repeat 50% 50%;
+    mask: url("/Content/images/svg/business.svg") no-repeat 50% 50%;
+    -webkit-mask-size:contain;
+    -webkit-mask-position:center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: baseline!important;
+}
+
+.icon-readerMode {
+    background-color: black;
+    -webkit-mask:  url("/Content/images/svg/chrome-reader-mode.svg") no-repeat 50% 50%;
+    mask: url("/Content/images/svg/chrome-reader-mode.svg") no-repeat 50% 50%;
+    -webkit-mask-size:contain;
+    -webkit-mask-position:center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: baseline!important;
+}
+
+.icon-search-sm {
+    -webkit-mask:  url("/Content/images/svg/search.svg") no-repeat 50% 50%;
+    mask: url("/Content/images/svg/search.svg") no-repeat 50% 50%;
+    -webkit-mask-size:contain;
+    -webkit-mask-position:center;
+    width: 16px;
+    height: 19px;
+    display: inline-block;
+    vertical-align: sub !important;
+}
+
+.icon-notes {
+    -webkit-mask:  url("/Content/images/svg/notes.svg") no-repeat 50% 50%;
+    mask: url("/Content/images/svg/notes.svg") no-repeat 50% 50%;
+    -webkit-mask-size:contain;
+    -webkit-mask-position:center;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: sub !important;
+}
+.icon-calendar {
+    -webkit-mask:  url("/Content/images/svg/calendar.svg") no-repeat 50% 50%;
+    mask: url("/Content/images/svg/calendar.svg") no-repeat 50% 50%;
+    -webkit-mask-size:contain;
+    -webkit-mask-position:center;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: sub !important;
+}
+
+
+
+// end icon

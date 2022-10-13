@@ -1,0 +1,54 @@
+﻿@model GetFeedBack.Models.FeedBacks
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/FeedBack/_Layout.cshtml";
+}
+
+<h1>Chỉnh sửa</h1>
+
+ <hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" name="myForm" onsubmit="return validateForm()">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" required />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" name="Description" id="des" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="btn-group">
+    <a class="btn btn-secondary" asp-action="Index" asp-route-id="@Model.UserId">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function validateForm() {
+            debugger;
+            let des = document.forms["myForm"]["Description"].value;
+            if(des.length>250){
+                des = document.getElementById('des').value = '';
+                alert("Không được nhập quá 250 ký tự");                
+                return false;
+            }
+        }
+    </script>
+}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

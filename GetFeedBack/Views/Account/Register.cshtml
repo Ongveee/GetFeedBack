@@ -1,0 +1,97 @@
+﻿@model Users
+
+
+<body>
+	
+	<!-- Page content -->
+	<div class="container d-flex flex-column">
+		<div class="row align-items-center justify-content-center g-0 min-vh-100">
+			<div class="col-lg-5 col-md-8 py-8 py-xl-0">
+				<!-- Card -->
+				<div class="card shadow">
+					<!-- Card body -->
+					<div class="card-body p-6">
+						<div class="mb-4" style="text-align: center">
+							<a><img src="https://marketingworks.vn/storage/logo_company/1646232924.jpg" class="mb-8" alt=""  /></a>
+							<h1 class="mb-1 fw-bold" style="text-align:center">Sign up</h1>
+						</div>
+						<!-- Form -->
+						<form id="frmLogin" name="myForm" asp-action="Register" asp-controller="Account" method="post" onsubmit="return validateForm()">
+							<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+							<!-- Email -->
+							<div class="mb-3">
+								<label asp-for="Username" class="form-label">Username</label>
+								<input asp-for="@Model.Username" class="form-control" placeholder="Username" required />
+								<span asp-validation-for="@Model.Username" class="text-danger"></span>
+								
+							</div>
+							<div class="mb-3">
+								<label asp-for="Email" class="form-label">Email</label>
+								<input asp-for="@Model.Email" class="form-control" placeholder="Email"
+									   required />
+								<span asp-validation-for="@Model.Email" class="text-danger"></span>
+								<p class="text-danger">@ViewBag.error</p>
+							</div>
+							<!-- Password -->
+							<div class="mb-3">
+								<label asp-for="Password" class="form-label">Password</label>
+								<input input asp-for="@Model.Password" class="form-control" placeholder="**************"
+									   required type="password" id="des" />
+								<span asp-validation-for="@Model.Password" class="text-danger"></span>
+							</div>
+							<!-- Checkbox -->
+							<div>
+								<!-- Button -->
+								<div class="d-grid gap-2 col-4 mx-auto">
+									<button type="submit" class="btn btn-outline-primary" value="login">
+										Sign Up
+									</button>
+								</div>
+							</div>
+							<hr class="my-4" />
+							<div class=" text-center">
+								<!--Facebook-->
+								<a href="https://www.facebook.com/Mr.Wall.K48A1/" class="btn-social btn-social-outline btn-facebook">
+									<i class="fa-brands fa-facebook"></i>
+								</a>
+								<!--Twitter-->
+								<a href="#" class="btn-social btn-social-outline btn-twitter">
+									<i class="fa-brands fa-twitter"></i>
+								</a>
+								<!--LinkedIn-->
+								<a href="#" class="btn-social btn-social-outline btn-linkedin">
+									<i class="fa-brands fa-linkedin"></i>
+								</a>
+								<!--GitHub-->
+								<a href="#" class="btn-social btn-social-outline btn-github">
+									<i class="fa-brands fa-github"></i>
+								</a>
+								<!--GitHub-->
+								<a href="#" class="btn-social btn-social-outline btn-heart">
+									<i class="fa-brands fa-heart"></i>
+								</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function validateForm() {
+            debugger;
+            let des = document.forms["myForm"]["Password"].value;
+            if (des.length < 6) {
+                des = document.getElementById('des').value = '';
+                alert("Không đúng định dạng ");
+                return false;
+            }
+        }
+    </script>
+    }

@@ -1,0 +1,86 @@
+﻿@model GetFeedBack.Models.FeedBackDetails
+
+@{
+    ViewData["Title"] = "FeedbackForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="myModalSuccess" class="modal fade text-width:30%;" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 style="text-align: center;">Thông báo</h2>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div id="SuccessAlertModal" class="modal-body">
+            </div>
+
+            <div class="modal-footer" style="background-color:white">
+                &nbsp;
+                <button type="button" class="btn btn-info" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-fb">
+        <div class="center">
+            <h2>Phản hồi</h2>
+        </div>
+
+        <form asp-action="FeedbackForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SenderName" class="form-label"></label>
+                <input asp-for="SenderName" class="form-control fz-14" />
+                <span asp-validation-for="SenderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Advantage" class="form-label"></label>
+                <input asp-for="Advantage" class="form-control fz-14" required />
+                <span asp-validation-for="Advantage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disavantage" class="form-label"></label>
+                <input asp-for="Disavantage" class="form-control fz-14" required />
+                <span asp-validation-for="Disavantage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opinion" class="form-label"></label>
+                <input asp-for="Opinion" class="form-control fz-14" required />
+                <span asp-validation-for="Opinion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function openSuccessModal(strMessage) {
+            var myDiv = document.getElementById("SuccessAlertModal");
+            myDiv.innerHTML = strMessage;
+            $('#myModalSuccess').modal("show");
+
+        }
+
+        $(document).ready(function () {
+            var msg = "@TempData["SuccessMessage"]";
+            if (msg)
+                openSuccessModal(msg);
+        })
+
+    </script>
+    }
+
